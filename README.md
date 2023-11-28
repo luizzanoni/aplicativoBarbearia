@@ -12,10 +12,11 @@ Desenvolvedores
 
 Resumo
 
-Este aplicativo foi desenvolvido para facilitar a gestão de barbearias. Ele permite o gerenciamento de clientes, serviços, agendamentos e estoque. O aplicativo também possui uma interface moderna e intuitiva.
+Este aplicativo foi desenvolvido para facilitar a gestão de barbearias. Ele permite o gerenciamento de clientes, barbearias e agendamentos. O aplicativo também possui uma interface moderna e intuitiva.
 
 Funcionalidades
 
 ° Gerenciamento de clientes: cadastro, consulta, edição e exclusão de clientes. </br>
+° Gerenciamento de barbearias: cadastro, consulta, edição e exclusão de clientes. </br>
 ° Gerenciamento de agendamentos: criação, consulta, edição e exclusão de agendamentos. </br>
 ° Interface moderna e intuitiva: o aplicativo possui uma interface moderna e intuitiva, facilitando o uso por parte dos clientes e funcionários. </br>
