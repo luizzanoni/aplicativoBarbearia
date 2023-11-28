@@ -1,6 +1,7 @@
 # Barbearia
 
-> Aplicativo para barbearias feito no NetBeans com a linguagem Java
+> Projeto em fase inicial </br>
+> Aplicativo para barbearias feito no NetBeans com a linguagem Java </br>
 
 Este aplicativo é a entrega do trabalho final da disciplina de Programação do curso de Bacharelado em Ciências da Computação da Universidade Federal da Fronteira Sul (UFFS).
 
