@@ -1,0 +1,1 @@
+CREATE TABLE IF NOT EXISTS user(id INTEGER, name TEXT,login TEXT, password TEXT, is_barber INTEGER);

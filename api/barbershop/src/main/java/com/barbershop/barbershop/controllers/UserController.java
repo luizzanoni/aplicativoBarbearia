@@ -1,27 +1,61 @@
 package com.barbershop.barbershop.controllers;
-import java.util.List;
 
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.barbershop.barbershop.entities.CustumerResponse;
 import com.barbershop.barbershop.entities.User;
-import com.barbershop.barbershop.repositories.UserRepository;
+import com.barbershop.barbershop.services.UserService;
 
 import lombok.AllArgsConstructor;
 
 @RestController
 @AllArgsConstructor
 public class UserController {
-    UserRepository userRepository;
+    UserService userService;
 
-    @GetMapping("/info")
-    public String info(){
-        return "The application is up...";
+    @PostMapping("/signup")
+    public CustumerResponse createUser(@RequestBody User user){
+        CustumerResponse custumerResponse;
+
+        try{
+            System.out.println(user);
+            Boolean isUsuarioCriado = userService.createUser(user);
+            if (isUsuarioCriado){
+                String message = "Usuário criado com sucesso";
+                custumerResponse = new CustumerResponse(message, 200);
+            }  else {
+                custumerResponse = new CustumerResponse("Usuário inválido", 401);
+            }
+            
+        }catch (Exception exc){
+            String message = exc.getMessage();
+            custumerResponse = new CustumerResponse(message, 401);
+        }
+
+        return custumerResponse;
     }
 
-    @GetMapping("/user")
-    public List<User> getAllUsers(){
-        return userRepository.findAll();
+    @PostMapping("/signin")
+    public CustumerResponse loginUser(@RequestBody User user){
+        CustumerResponse custumerResponse;
 
+        try{
+            System.out.println(user);
+            Boolean isUserCorreto = userService.loginUser(user);
+            if (isUserCorreto){
+                String message = "Login efetuado com sucesso.";
+                custumerResponse = new CustumerResponse(message, 200);
+            } else {
+                custumerResponse = new CustumerResponse("Internal Error", 404);
+            }
+            
+        }catch (Exception exc){
+            String message = exc.getMessage();
+            custumerResponse = new CustumerResponse(message, 401);
+        }
+
+        return custumerResponse;
     }
 }
