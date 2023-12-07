@@ -150,7 +150,7 @@
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel3">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Nome do seu usu&#xe1;rio:"/>
+            <Property name="text" type="java.lang.String" value="Nome do seu usu&#xe1;rio ou seu e-mail:"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel4">

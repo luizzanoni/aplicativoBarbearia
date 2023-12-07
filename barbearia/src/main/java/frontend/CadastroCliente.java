@@ -68,7 +68,7 @@ public class CadastroCliente extends javax.swing.JFrame {
 
         jLabel2.setText("Seu nome completo:");
 
-        jLabel3.setText("Nome do seu usuário:");
+        jLabel3.setText("Nome do seu usuário ou seu e-mail:");
 
         jLabel4.setText("Digite sua senha:");
 
