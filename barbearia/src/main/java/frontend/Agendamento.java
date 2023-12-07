@@ -31,22 +31,22 @@ public class Agendamento extends javax.swing.JFrame {
         calendario = new com.toedter.calendar.JCalendar();
         jPanel2 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
-        btnNoveMeia1 = new javax.swing.JToggleButton();
-        btnOnze1 = new javax.swing.JToggleButton();
-        btnDozeMeia1 = new javax.swing.JToggleButton();
-        btnQuatorze1 = new javax.swing.JToggleButton();
-        btnQuinzeMeia1 = new javax.swing.JToggleButton();
-        btnAgendarHorario1 = new javax.swing.JButton();
-        btnDesseceis1 = new javax.swing.JToggleButton();
-        btnQuatorzeMeia1 = new javax.swing.JToggleButton();
-        btnTreze1 = new javax.swing.JToggleButton();
-        btnOnzeMeia1 = new javax.swing.JToggleButton();
-        btnDez1 = new javax.swing.JToggleButton();
-        btnDezMeia1 = new javax.swing.JToggleButton();
-        btnDoze1 = new javax.swing.JToggleButton();
-        btnTrezeMeia1 = new javax.swing.JToggleButton();
-        btnQuinze1 = new javax.swing.JToggleButton();
-        btnDesseceisMeia1 = new javax.swing.JToggleButton();
+        btnNoveMeia = new javax.swing.JToggleButton();
+        btnOnze = new javax.swing.JToggleButton();
+        btnDozeMeia = new javax.swing.JToggleButton();
+        btnQuatorze = new javax.swing.JToggleButton();
+        btnQuinzeMeia = new javax.swing.JToggleButton();
+        btnAgendarHorario = new javax.swing.JButton();
+        btnDesseceis = new javax.swing.JToggleButton();
+        btnQuatorzeMeia = new javax.swing.JToggleButton();
+        btnTreze = new javax.swing.JToggleButton();
+        btnOnzeMeia = new javax.swing.JToggleButton();
+        btnDez = new javax.swing.JToggleButton();
+        btnDezMeia = new javax.swing.JToggleButton();
+        btnDoze = new javax.swing.JToggleButton();
+        btnTrezeMeia = new javax.swing.JToggleButton();
+        btnQuinze = new javax.swing.JToggleButton();
+        btnDesseceisMeia = new javax.swing.JToggleButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Agende seu horário");
@@ -57,48 +57,53 @@ public class Agendamento extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel3.setText("Selecione o seu horário:");
 
-        btnNoveMeia1.setText("9:30");
-        btnNoveMeia1.addActionListener(new java.awt.event.ActionListener() {
+        btnNoveMeia.setText("9:30");
+        btnNoveMeia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnNoveMeia1ActionPerformed(evt);
+                btnNoveMeiaActionPerformed(evt);
             }
         });
 
-        btnOnze1.setText("11:00");
+        btnOnze.setText("11:00");
 
-        btnDozeMeia1.setText("12:30");
+        btnDozeMeia.setText("12:30");
 
-        btnQuatorze1.setText("14:00");
+        btnQuatorze.setText("14:00");
 
-        btnQuinzeMeia1.setText("15:30");
+        btnQuinzeMeia.setText("15:30");
 
-        btnAgendarHorario1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        btnAgendarHorario1.setText("Agendar");
+        btnAgendarHorario.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        btnAgendarHorario.setText("Agendar");
 
-        btnDesseceis1.setText("16:00");
+        btnDesseceis.setText("16:00");
 
-        btnQuatorzeMeia1.setText("14:30");
+        btnQuatorzeMeia.setText("14:30");
 
-        btnTreze1.setText("13:00");
-
-        btnOnzeMeia1.setText("11:30");
-        btnOnzeMeia1.addActionListener(new java.awt.event.ActionListener() {
+        btnTreze.setText("13:00");
+        btnTreze.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnOnzeMeia1ActionPerformed(evt);
+                btnTrezeActionPerformed(evt);
             }
         });
 
-        btnDez1.setText("10:00");
+        btnOnzeMeia.setText("11:30");
+        btnOnzeMeia.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnOnzeMeiaActionPerformed(evt);
+            }
+        });
 
-        btnDezMeia1.setText("10:30");
+        btnDez.setText("10:00");
 
-        btnDoze1.setText("12:00");
+        btnDezMeia.setText("10:30");
 
-        btnTrezeMeia1.setText("13:30");
+        btnDoze.setText("12:00");
 
-        btnQuinze1.setText("15:00");
+        btnTrezeMeia.setText("13:30");
 
-        btnDesseceisMeia1.setText("16:30");
+        btnQuinze.setText("15:00");
+
+        btnDesseceisMeia.setText("16:30");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -114,37 +119,37 @@ public class Agendamento extends javax.swing.JFrame {
                             .addGap(12, 12, 12)
                             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addGroup(jPanel2Layout.createSequentialGroup()
-                                    .addComponent(btnNoveMeia1, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(btnNoveMeia, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(btnDez1, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(btnDez, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(btnDezMeia1, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(btnDezMeia, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                                        .addComponent(btnOnze1, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(btnOnze, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(btnOnzeMeia1, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(btnOnzeMeia, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(btnDoze1, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(btnDoze, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                                        .addComponent(btnDozeMeia1, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(btnDozeMeia, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(btnTreze1, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(btnTreze, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(btnTrezeMeia1, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(btnTrezeMeia, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                                        .addComponent(btnQuatorze1, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(btnQuatorze, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(btnQuatorzeMeia1, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(btnQuatorzeMeia, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(btnQuinze1, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(btnQuinze, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                                        .addComponent(btnQuinzeMeia1, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(btnQuinzeMeia, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(btnDesseceis1, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(btnDesseceis, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(btnDesseceisMeia1, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(btnAgendarHorario1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 345, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                        .addComponent(btnDesseceisMeia, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(btnAgendarHorario, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 345, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addContainerGap(13, Short.MAX_VALUE)))
         );
         jPanel2Layout.setVerticalGroup(
@@ -156,31 +161,31 @@ public class Agendamento extends javax.swing.JFrame {
                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(18, 18, 18)
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(btnNoveMeia1)
-                        .addComponent(btnDez1)
-                        .addComponent(btnDezMeia1))
+                        .addComponent(btnNoveMeia)
+                        .addComponent(btnDez)
+                        .addComponent(btnDezMeia))
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(btnOnze1)
-                        .addComponent(btnOnzeMeia1)
-                        .addComponent(btnDoze1))
+                        .addComponent(btnOnze)
+                        .addComponent(btnOnzeMeia)
+                        .addComponent(btnDoze))
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(btnDozeMeia1)
-                        .addComponent(btnTreze1)
-                        .addComponent(btnTrezeMeia1))
+                        .addComponent(btnDozeMeia)
+                        .addComponent(btnTreze)
+                        .addComponent(btnTrezeMeia))
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(btnQuatorze1)
-                        .addComponent(btnQuatorzeMeia1)
-                        .addComponent(btnQuinze1))
+                        .addComponent(btnQuatorze)
+                        .addComponent(btnQuatorzeMeia)
+                        .addComponent(btnQuinze))
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(btnQuinzeMeia1)
-                        .addComponent(btnDesseceis1)
-                        .addComponent(btnDesseceisMeia1))
+                        .addComponent(btnQuinzeMeia)
+                        .addComponent(btnDesseceis)
+                        .addComponent(btnDesseceisMeia))
                     .addGap(32, 32, 32)
-                    .addComponent(btnAgendarHorario1)
+                    .addComponent(btnAgendarHorario)
                     .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
 
@@ -233,13 +238,17 @@ public class Agendamento extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnOnzeMeia1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOnzeMeia1ActionPerformed
+    private void btnOnzeMeiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOnzeMeiaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnOnzeMeia1ActionPerformed
+    }//GEN-LAST:event_btnOnzeMeiaActionPerformed
 
-    private void btnNoveMeia1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNoveMeia1ActionPerformed
+    private void btnNoveMeiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNoveMeiaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnNoveMeia1ActionPerformed
+    }//GEN-LAST:event_btnNoveMeiaActionPerformed
+
+    private void btnTrezeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTrezeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnTrezeActionPerformed
 
     /**
      * @param args the command line arguments
@@ -277,22 +286,22 @@ public class Agendamento extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnAgendarHorario1;
-    private javax.swing.JToggleButton btnDesseceis1;
-    private javax.swing.JToggleButton btnDesseceisMeia1;
-    private javax.swing.JToggleButton btnDez1;
-    private javax.swing.JToggleButton btnDezMeia1;
-    private javax.swing.JToggleButton btnDoze1;
-    private javax.swing.JToggleButton btnDozeMeia1;
-    private javax.swing.JToggleButton btnNoveMeia1;
-    private javax.swing.JToggleButton btnOnze1;
-    private javax.swing.JToggleButton btnOnzeMeia1;
-    private javax.swing.JToggleButton btnQuatorze1;
-    private javax.swing.JToggleButton btnQuatorzeMeia1;
-    private javax.swing.JToggleButton btnQuinze1;
-    private javax.swing.JToggleButton btnQuinzeMeia1;
-    private javax.swing.JToggleButton btnTreze1;
-    private javax.swing.JToggleButton btnTrezeMeia1;
+    private javax.swing.JButton btnAgendarHorario;
+    private javax.swing.JToggleButton btnDesseceis;
+    private javax.swing.JToggleButton btnDesseceisMeia;
+    private javax.swing.JToggleButton btnDez;
+    private javax.swing.JToggleButton btnDezMeia;
+    private javax.swing.JToggleButton btnDoze;
+    private javax.swing.JToggleButton btnDozeMeia;
+    private javax.swing.JToggleButton btnNoveMeia;
+    private javax.swing.JToggleButton btnOnze;
+    private javax.swing.JToggleButton btnOnzeMeia;
+    private javax.swing.JToggleButton btnQuatorze;
+    private javax.swing.JToggleButton btnQuatorzeMeia;
+    private javax.swing.JToggleButton btnQuinze;
+    private javax.swing.JToggleButton btnQuinzeMeia;
+    private javax.swing.JToggleButton btnTreze;
+    private javax.swing.JToggleButton btnTrezeMeia;
     private com.toedter.calendar.JCalendar calendario;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;

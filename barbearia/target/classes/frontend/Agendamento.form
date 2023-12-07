@@ -105,42 +105,42 @@
                                   <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" alignment="0" attributes="0">
-                                          <Component id="btnNoveMeia1" min="-2" pref="111" max="-2" attributes="0"/>
+                                          <Component id="btnNoveMeia" min="-2" pref="111" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="btnDez1" min="-2" pref="111" max="-2" attributes="0"/>
+                                          <Component id="btnDez" min="-2" pref="111" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="btnDezMeia1" min="-2" pref="111" max="-2" attributes="0"/>
+                                          <Component id="btnDezMeia" min="-2" pref="111" max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="103" alignment="0" groupAlignment="0" attributes="0">
                                           <Group type="102" alignment="1" attributes="0">
-                                              <Component id="btnOnze1" min="-2" pref="111" max="-2" attributes="0"/>
+                                              <Component id="btnOnze" min="-2" pref="111" max="-2" attributes="0"/>
                                               <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="btnOnzeMeia1" min="-2" pref="111" max="-2" attributes="0"/>
+                                              <Component id="btnOnzeMeia" min="-2" pref="111" max="-2" attributes="0"/>
                                               <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="btnDoze1" min="-2" pref="111" max="-2" attributes="0"/>
+                                              <Component id="btnDoze" min="-2" pref="111" max="-2" attributes="0"/>
                                           </Group>
                                           <Group type="102" alignment="1" attributes="0">
-                                              <Component id="btnDozeMeia1" min="-2" pref="111" max="-2" attributes="0"/>
+                                              <Component id="btnDozeMeia" min="-2" pref="111" max="-2" attributes="0"/>
                                               <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="btnTreze1" min="-2" pref="111" max="-2" attributes="0"/>
+                                              <Component id="btnTreze" min="-2" pref="111" max="-2" attributes="0"/>
                                               <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="btnTrezeMeia1" min="-2" pref="111" max="-2" attributes="0"/>
+                                              <Component id="btnTrezeMeia" min="-2" pref="111" max="-2" attributes="0"/>
                                           </Group>
                                           <Group type="102" alignment="1" attributes="0">
-                                              <Component id="btnQuatorze1" min="-2" pref="111" max="-2" attributes="0"/>
+                                              <Component id="btnQuatorze" min="-2" pref="111" max="-2" attributes="0"/>
                                               <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="btnQuatorzeMeia1" min="-2" pref="111" max="-2" attributes="0"/>
+                                              <Component id="btnQuatorzeMeia" min="-2" pref="111" max="-2" attributes="0"/>
                                               <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="btnQuinze1" min="-2" pref="111" max="-2" attributes="0"/>
+                                              <Component id="btnQuinze" min="-2" pref="111" max="-2" attributes="0"/>
                                           </Group>
                                           <Group type="102" alignment="1" attributes="0">
-                                              <Component id="btnQuinzeMeia1" min="-2" pref="111" max="-2" attributes="0"/>
+                                              <Component id="btnQuinzeMeia" min="-2" pref="111" max="-2" attributes="0"/>
                                               <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="btnDesseceis1" min="-2" pref="111" max="-2" attributes="0"/>
+                                              <Component id="btnDesseceis" min="-2" pref="111" max="-2" attributes="0"/>
                                               <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="btnDesseceisMeia1" min="-2" pref="111" max="-2" attributes="0"/>
+                                              <Component id="btnDesseceisMeia" min="-2" pref="111" max="-2" attributes="0"/>
                                           </Group>
-                                          <Component id="btnAgendarHorario1" alignment="1" min="-2" pref="345" max="-2" attributes="0"/>
+                                          <Component id="btnAgendarHorario" alignment="1" min="-2" pref="345" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                               </Group>
@@ -159,36 +159,36 @@
                           <Component id="jLabel3" min="-2" pref="33" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="btnNoveMeia1" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="btnDez1" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="btnDezMeia1" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnNoveMeia" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnDez" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnDezMeia" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="btnOnze1" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="btnOnzeMeia1" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="btnDoze1" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnOnze" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnOnzeMeia" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnDoze" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="btnDozeMeia1" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="btnTreze1" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="btnTrezeMeia1" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnDozeMeia" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnTreze" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnTrezeMeia" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="btnQuatorze1" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="btnQuatorzeMeia1" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="btnQuinze1" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnQuatorze" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnQuatorzeMeia" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnQuinze" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="btnQuinzeMeia1" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="btnDesseceis1" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="btnDesseceisMeia1" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnQuinzeMeia" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnDesseceis" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnDesseceisMeia" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
-                          <Component id="btnAgendarHorario1" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnAgendarHorario" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
                   </Group>
@@ -204,35 +204,35 @@
                 <Property name="text" type="java.lang.String" value="Selecione o seu hor&#xe1;rio:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JToggleButton" name="btnNoveMeia1">
+            <Component class="javax.swing.JToggleButton" name="btnNoveMeia">
               <Properties>
                 <Property name="text" type="java.lang.String" value="9:30"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnNoveMeia1ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnNoveMeiaActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JToggleButton" name="btnOnze1">
+            <Component class="javax.swing.JToggleButton" name="btnOnze">
               <Properties>
                 <Property name="text" type="java.lang.String" value="11:00"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JToggleButton" name="btnDozeMeia1">
+            <Component class="javax.swing.JToggleButton" name="btnDozeMeia">
               <Properties>
                 <Property name="text" type="java.lang.String" value="12:30"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JToggleButton" name="btnQuatorze1">
+            <Component class="javax.swing.JToggleButton" name="btnQuatorze">
               <Properties>
                 <Property name="text" type="java.lang.String" value="14:00"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JToggleButton" name="btnQuinzeMeia1">
+            <Component class="javax.swing.JToggleButton" name="btnQuinzeMeia">
               <Properties>
                 <Property name="text" type="java.lang.String" value="15:30"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="btnAgendarHorario1">
+            <Component class="javax.swing.JButton" name="btnAgendarHorario">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI" size="24" style="0"/>
@@ -240,55 +240,58 @@
                 <Property name="text" type="java.lang.String" value="Agendar"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JToggleButton" name="btnDesseceis1">
+            <Component class="javax.swing.JToggleButton" name="btnDesseceis">
               <Properties>
                 <Property name="text" type="java.lang.String" value="16:00"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JToggleButton" name="btnQuatorzeMeia1">
+            <Component class="javax.swing.JToggleButton" name="btnQuatorzeMeia">
               <Properties>
                 <Property name="text" type="java.lang.String" value="14:30"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JToggleButton" name="btnTreze1">
+            <Component class="javax.swing.JToggleButton" name="btnTreze">
               <Properties>
                 <Property name="text" type="java.lang.String" value="13:00"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnTrezeActionPerformed"/>
+              </Events>
             </Component>
-            <Component class="javax.swing.JToggleButton" name="btnOnzeMeia1">
+            <Component class="javax.swing.JToggleButton" name="btnOnzeMeia">
               <Properties>
                 <Property name="text" type="java.lang.String" value="11:30"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnOnzeMeia1ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnOnzeMeiaActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JToggleButton" name="btnDez1">
+            <Component class="javax.swing.JToggleButton" name="btnDez">
               <Properties>
                 <Property name="text" type="java.lang.String" value="10:00"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JToggleButton" name="btnDezMeia1">
+            <Component class="javax.swing.JToggleButton" name="btnDezMeia">
               <Properties>
                 <Property name="text" type="java.lang.String" value="10:30"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JToggleButton" name="btnDoze1">
+            <Component class="javax.swing.JToggleButton" name="btnDoze">
               <Properties>
                 <Property name="text" type="java.lang.String" value="12:00"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JToggleButton" name="btnTrezeMeia1">
+            <Component class="javax.swing.JToggleButton" name="btnTrezeMeia">
               <Properties>
                 <Property name="text" type="java.lang.String" value="13:30"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JToggleButton" name="btnQuinze1">
+            <Component class="javax.swing.JToggleButton" name="btnQuinze">
               <Properties>
                 <Property name="text" type="java.lang.String" value="15:00"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JToggleButton" name="btnDesseceisMeia1">
+            <Component class="javax.swing.JToggleButton" name="btnDesseceisMeia">
               <Properties>
                 <Property name="text" type="java.lang.String" value="16:30"/>
               </Properties>

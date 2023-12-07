@@ -190,22 +190,22 @@ public class Inicial extends javax.swing.JFrame {
 
     private void btnBarbaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBarbaActionPerformed
         Agendamento agendamento = new Agendamento();        
-        agendamento.setVisible(true);        // TODO add your handling code here:
+        agendamento.setVisible(true);
     }//GEN-LAST:event_btnBarbaActionPerformed
 
     private void btnSobrancelhasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSobrancelhasActionPerformed
         Agendamento agendamento = new Agendamento();        
-        agendamento.setVisible(true);        // TODO add your handling code here:
+        agendamento.setVisible(true);
     }//GEN-LAST:event_btnSobrancelhasActionPerformed
 
     private void btnCabeloBarbaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCabeloBarbaActionPerformed
         Agendamento agendamento = new Agendamento();        
-        agendamento.setVisible(true);        // TODO add your handling code here:
+        agendamento.setVisible(true);
     }//GEN-LAST:event_btnCabeloBarbaActionPerformed
 
     private void btnCorteCabeloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCorteCabeloActionPerformed
         Agendamento agendamento = new Agendamento();        
-        agendamento.setVisible(true);// TODO add your handling code here:
+        agendamento.setVisible(true);
     }//GEN-LAST:event_btnCorteCabeloActionPerformed
 
     /**
