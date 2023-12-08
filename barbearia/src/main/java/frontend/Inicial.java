@@ -127,6 +127,11 @@ public class Inicial extends javax.swing.JFrame {
         menuBarbearias.add(jSeparator1);
 
         barberTerceira.setText("Barbearia Celeiro");
+        barberTerceira.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                barberTerceiraActionPerformed(evt);
+            }
+        });
         menuBarbearias.add(barberTerceira);
 
         jMenuBar1.add(menuBarbearias);
@@ -169,7 +174,7 @@ public class Inicial extends javax.swing.JFrame {
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(34, 34, 34)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(82, Short.MAX_VALUE))
+                .addContainerGap(106, Short.MAX_VALUE))
         );
 
         pack();
@@ -177,11 +182,13 @@ public class Inicial extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void barberPrimeiraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_barberPrimeiraActionPerformed
-        // TODO add your handling code here:
+        ListagemHorarios listagemHorarios = new ListagemHorarios();        
+        listagemHorarios.setVisible(true);// TODO add your handling code here:
     }//GEN-LAST:event_barberPrimeiraActionPerformed
 
     private void barberSegundaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_barberSegundaActionPerformed
-        // TODO add your handling code here:
+        ListagemHorarios listagemHorarios = new ListagemHorarios();        
+        listagemHorarios.setVisible(true);// TODO add your handling code here:
     }//GEN-LAST:event_barberSegundaActionPerformed
 
     private void helpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_helpActionPerformed
@@ -207,6 +214,11 @@ public class Inicial extends javax.swing.JFrame {
         Agendamento agendamento = new Agendamento();        
         agendamento.setVisible(true);
     }//GEN-LAST:event_btnCorteCabeloActionPerformed
+
+    private void barberTerceiraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_barberTerceiraActionPerformed
+        ListagemHorarios listagemHorarios = new ListagemHorarios();        
+        listagemHorarios.setVisible(true);        // TODO add your handling code here:
+    }//GEN-LAST:event_barberTerceiraActionPerformed
 
     /**
      * @param args the command line arguments
