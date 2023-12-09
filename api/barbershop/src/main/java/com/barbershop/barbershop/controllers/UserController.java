@@ -16,44 +16,44 @@ public class UserController {
     UserService userService;
 
     @PostMapping("/signup")
-    public CustumerResponse createUser(@RequestBody User user){
-        CustumerResponse custumerResponse;
+    public CustumerResponse<User> createUser(@RequestBody User user){
+        CustumerResponse<User> custumerResponse;
 
         try{
             System.out.println(user);
             Boolean isUsuarioCriado = userService.createUser(user);
             if (isUsuarioCriado){
                 String message = "Usuário criado com sucesso";
-                custumerResponse = new CustumerResponse(message, 200);
+                custumerResponse = new CustumerResponse<User>(message, 200);
             }  else {
-                custumerResponse = new CustumerResponse("Usuário inválido", 401);
+                custumerResponse = new CustumerResponse<User>("Usuário inválido", 401);
             }
             
         }catch (Exception exc){
             String message = exc.getMessage();
-            custumerResponse = new CustumerResponse(message, 401);
+            custumerResponse = new CustumerResponse<User>(message, 401);
         }
 
         return custumerResponse;
     }
 
     @PostMapping("/signin")
-    public CustumerResponse loginUser(@RequestBody User user){
-        CustumerResponse custumerResponse;
+    public CustumerResponse<User> loginUser(@RequestBody User user){
+        CustumerResponse<User> custumerResponse;
 
         try{
             System.out.println(user);
-            Boolean isUserCorreto = userService.loginUser(user);
-            if (isUserCorreto){
+            User userDB = userService.loginUser(user);
+            if (userDB != null){
                 String message = "Login efetuado com sucesso.";
-                custumerResponse = new CustumerResponse(message, 200);
+                custumerResponse = new CustumerResponse<User>(message, 200, userDB);
             } else {
-                custumerResponse = new CustumerResponse("Internal Error", 404);
+                custumerResponse = new CustumerResponse<User>("Internal Error", 404);
             }
             
         }catch (Exception exc){
             String message = exc.getMessage();
-            custumerResponse = new CustumerResponse(message, 401);
+            custumerResponse = new CustumerResponse<User>(message, 401);
         }
 
         return custumerResponse;

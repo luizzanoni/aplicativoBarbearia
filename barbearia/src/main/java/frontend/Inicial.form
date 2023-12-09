@@ -183,6 +183,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Bem-Vindo, {@User}"/>
       </Properties>
+      <Events>
+        <EventHandler event="componentAdded" listener="java.awt.event.ContainerListener" parameters="java.awt.event.ContainerEvent" handler="labelEntradaUserComponentAdded"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel2">
       <Properties>

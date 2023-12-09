@@ -4,6 +4,18 @@
  */
 package frontend;
 
+import entities.CustumerResponse;
+import entities.Schedule;
+import entities.Sessao;
+import entities.User;
+import javax.swing.JOptionPane;
+import org.springframework.core.ParameterizedTypeReference;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.client.RestTemplate;
+
 /**
  *
  * @author luanareiszanoni
@@ -74,6 +86,11 @@ public class Agendamento extends javax.swing.JFrame {
 
         btnAgendarHorario.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         btnAgendarHorario.setText("Agendar");
+        btnAgendarHorario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAgendarHorarioActionPerformed(evt);
+            }
+        });
 
         btnDesseceis.setText("16:00");
 
@@ -250,6 +267,48 @@ public class Agendamento extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnTrezeActionPerformed
 
+    private void btnAgendarHorarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgendarHorarioActionPerformed
+        this.cadastrarAgendamento();
+    }//GEN-LAST:event_btnAgendarHorarioActionPerformed
+    
+    private Boolean cadastrarAgendamento(){
+        Sessao sessao = Sessao.getInstance();
+
+        Boolean isCamposPreenchidos = true;
+        if(!isCamposPreenchidos){
+        }
+
+        Schedule schedule = new Schedule();
+        RestTemplate req = new RestTemplate();
+        HttpHeaders headers = new HttpHeaders();
+
+        schedule.setId_user(sessao.idUsuario);
+        schedule.setId_corte(sessao.id_corte);
+        schedule.setNome_corte(sessao.nome_corte);
+        schedule.setData_corte("2023/12/09 19:00");
+
+        headers.set("Content-Type", "application/json");
+        HttpEntity<Schedule> resqestEntity = new HttpEntity<>(schedule, headers);
+
+        ResponseEntity<CustumerResponse<Schedule>> responseEntity = req.exchange(
+                "http://localhost:8090/schedule/cadastro",
+                HttpMethod.POST,
+                resqestEntity,
+                new ParameterizedTypeReference<CustumerResponse<Schedule>>() {}
+        );
+
+        CustumerResponse<Schedule> response = responseEntity.getBody();
+        Boolean isAgendado = false;
+
+        if(response.getStatus() == 200){
+            isAgendado = true;
+        }else {
+            JOptionPane.showMessageDialog(this, response.getMessage());
+        }
+
+        return isAgendado;
+    }
+    
     /**
      * @param args the command line arguments
      */

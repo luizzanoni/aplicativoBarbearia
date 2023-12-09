@@ -8,9 +8,10 @@ package entities;
  *
  * @author lucas
  */
-public class CustumerResponse {
+public class CustumerResponse<T> {
     private String message;
     private int status;
+    private T entity;
     
     public CustumerResponse(){
     }
@@ -34,5 +35,13 @@ public class CustumerResponse {
     
     public void setStatus(Integer status){
         this.status = status;
+    }
+    
+    public T getEntity() {
+        return entity;
+    }
+    
+    public void setEntity(T entity){
+        this.entity = entity;
     }
 }

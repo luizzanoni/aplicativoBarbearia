@@ -31,15 +31,14 @@ public class UserService {
         }
     }
 
-    public Boolean loginUser(User user) throws Exception{
-        Boolean isEncontrouUsuario = false;
+    public User loginUser(User user) throws Exception{
+        User userDB;
         try {
-            this.userRepository.findUserByLogin(user.getLogin(), user.getPassword());
-            isEncontrouUsuario = true;
+            userDB = this.userRepository.findUserByLogin(user.getLogin(), user.getPassword());
         }catch(Exception exc){
             throw new Exception("usuário ou senha inválido.");
         }
 
-        return isEncontrouUsuario;
+        return userDB;
     }
 }

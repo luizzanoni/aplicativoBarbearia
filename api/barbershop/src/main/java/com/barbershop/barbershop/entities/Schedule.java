@@ -15,19 +15,22 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class User{
+public class Schedule {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
     Long id;
 
-    @Column(name = "name")
-    String name;
+    @Column(name = "id_user")
+    Long id_user;
 
-    @Column(name = "login")
-    String login;
+    @Column(name = "id_corte")
+    Long id_corte;
 
-    @Column(name = "password")
-    String password;
+    @Column(name = "nome_corte")
+    String nome_corte;
+    
+    @Column(name = "data_corte")
+    String data_corte;
 }
 

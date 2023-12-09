@@ -5,9 +5,11 @@
 package frontend;
 
 import entities.CustumerResponse;
+import entities.Sessao;
 import entities.User;
 import java.awt.HeadlessException;
 import javax.swing.JOptionPane;
+import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
@@ -226,6 +228,8 @@ public class Login extends javax.swing.JFrame {
     
         private boolean loginUsuario(){
         try{
+            Sessao sessao = Sessao.getInstance();
+
             Boolean isCamposPreenchidos = this.validarCamposPreenchidos();
             if(!isCamposPreenchidos){
                 return false;
@@ -244,19 +248,20 @@ public class Login extends javax.swing.JFrame {
             headers.set("Content-Type", "application/json");
             HttpEntity<User> resqestEntity = new HttpEntity<>(user, headers);
 
-            ResponseEntity<CustumerResponse> responseEntity = req.exchange(
+            ResponseEntity<CustumerResponse<User>> responseEntity = req.exchange(
                     "http://localhost:8090/signin",
                     HttpMethod.POST,
                     resqestEntity,
-                    CustumerResponse.class
+                    new ParameterizedTypeReference<CustumerResponse<User>>() {}
             );
 
-            CustumerResponse response = responseEntity.getBody();
+            CustumerResponse<User> response = responseEntity.getBody();
             Boolean userLogado = false;
             
             if(response.getStatus() == 200){
                 userLogado = true;
-                
+                sessao.idUsuario = response.getEntity().getId();
+                sessao.user = response.getEntity();
             }else {
                 JOptionPane.showMessageDialog(this, response.getMessage());
             }

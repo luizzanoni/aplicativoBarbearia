@@ -4,6 +4,9 @@
  */
 package frontend;
 
+import entities.Sessao;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author luizz
@@ -15,6 +18,9 @@ public class Inicial extends javax.swing.JFrame {
      */
     public Inicial() {
         initComponents();
+        Sessao sessao = Sessao.getInstance();
+        String msgBoasVindas = "Bem-Vindo " + sessao.user.getName();
+        labelEntradaUser.setText(msgBoasVindas);
     }
 
     /**
@@ -102,6 +108,11 @@ public class Inicial extends javax.swing.JFrame {
         );
 
         labelEntradaUser.setText("Bem-Vindo, {@User}");
+        labelEntradaUser.addContainerListener(new java.awt.event.ContainerAdapter() {
+            public void componentAdded(java.awt.event.ContainerEvent evt) {
+                labelEntradaUserComponentAdded(evt);
+            }
+        });
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel2.setText("Escolha um dos nossos serviços!");
@@ -183,12 +194,12 @@ public class Inicial extends javax.swing.JFrame {
 
     private void barberPrimeiraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_barberPrimeiraActionPerformed
         ListagemHorarios listagemHorarios = new ListagemHorarios();        
-        listagemHorarios.setVisible(true);// TODO add your handling code here:
+        listagemHorarios.setVisible(true);
     }//GEN-LAST:event_barberPrimeiraActionPerformed
 
     private void barberSegundaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_barberSegundaActionPerformed
         ListagemHorarios listagemHorarios = new ListagemHorarios();        
-        listagemHorarios.setVisible(true);// TODO add your handling code here:
+        listagemHorarios.setVisible(true);
     }//GEN-LAST:event_barberSegundaActionPerformed
 
     private void helpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_helpActionPerformed
@@ -196,21 +207,37 @@ public class Inicial extends javax.swing.JFrame {
     }//GEN-LAST:event_helpActionPerformed
 
     private void btnBarbaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBarbaActionPerformed
-        Agendamento agendamento = new Agendamento();        
+        Sessao sessao = Sessao.getInstance();
+        sessao.id_corte = 2;
+        sessao.nome_corte = "Barba";
+        
+        Agendamento agendamento = new Agendamento();
         agendamento.setVisible(true);
     }//GEN-LAST:event_btnBarbaActionPerformed
 
     private void btnSobrancelhasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSobrancelhasActionPerformed
+        Sessao sessao = Sessao.getInstance();
+        sessao.id_corte = 4;
+        sessao.nome_corte = "Sobrancelho";
+        
         Agendamento agendamento = new Agendamento();        
         agendamento.setVisible(true);
     }//GEN-LAST:event_btnSobrancelhasActionPerformed
 
     private void btnCabeloBarbaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCabeloBarbaActionPerformed
+        Sessao sessao = Sessao.getInstance();
+        sessao.id_corte = 3;
+        sessao.nome_corte = "Corte de cabelo e Barba";
+        
         Agendamento agendamento = new Agendamento();        
         agendamento.setVisible(true);
     }//GEN-LAST:event_btnCabeloBarbaActionPerformed
 
     private void btnCorteCabeloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCorteCabeloActionPerformed
+        Sessao sessao = Sessao.getInstance();
+        sessao.id_corte = 1;
+        sessao.nome_corte = "Corte de cabelo";
+        
         Agendamento agendamento = new Agendamento();        
         agendamento.setVisible(true);
     }//GEN-LAST:event_btnCorteCabeloActionPerformed
@@ -219,6 +246,10 @@ public class Inicial extends javax.swing.JFrame {
         ListagemHorarios listagemHorarios = new ListagemHorarios();        
         listagemHorarios.setVisible(true);        // TODO add your handling code here:
     }//GEN-LAST:event_barberTerceiraActionPerformed
+
+    private void labelEntradaUserComponentAdded(java.awt.event.ContainerEvent evt) {//GEN-FIRST:event_labelEntradaUserComponentAdded
+
+    }//GEN-LAST:event_labelEntradaUserComponentAdded
 
     /**
      * @param args the command line arguments
