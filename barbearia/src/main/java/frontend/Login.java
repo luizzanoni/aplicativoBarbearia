@@ -4,6 +4,17 @@
  */
 package frontend;
 
+import entities.CustumerResponse;
+import entities.User;
+import java.awt.HeadlessException;
+import javax.swing.JOptionPane;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.client.RestClientException;
+import org.springframework.web.client.RestTemplate;
+
 /**
  *
  * @author luizz
@@ -158,8 +169,12 @@ public class Login extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
-        Inicial lgn = new Inicial();
-        lgn.setVisible(true);
+        Boolean isLogou = this.loginUsuario();
+        if(isLogou){
+            Inicial lgn = new Inicial();
+            lgn.setVisible(true);
+        }
+        
     }//GEN-LAST:event_btnLoginActionPerformed
 
     private void txtUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUserActionPerformed
@@ -187,6 +202,8 @@ public class Login extends javax.swing.JFrame {
                     break;
                 }
             }
+            
+            // javax.swing.UIManager.setLookAndFeel(javax.swing.UIManager.getSystemLookAndFeelClassName());
         } catch (ClassNotFoundException ex) {
             java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
@@ -205,6 +222,84 @@ public class Login extends javax.swing.JFrame {
                 new Login().setVisible(true);
             }
         });
+    }
+    
+        private boolean loginUsuario(){
+        try{
+            Boolean isCamposPreenchidos = this.validarCamposPreenchidos();
+            if(!isCamposPreenchidos){
+                return false;
+            }
+            
+            User user = new User();
+            RestTemplate req = new RestTemplate();
+            HttpHeaders headers = new HttpHeaders();
+            
+            String loginUser = txtUser1.getText();
+            String passwordUser = String.valueOf(txtPassword1.getPassword()) ;
+
+            user.setLogin(loginUser);
+            user.setPassword(passwordUser);
+
+            headers.set("Content-Type", "application/json");
+            HttpEntity<User> resqestEntity = new HttpEntity<>(user, headers);
+
+            ResponseEntity<CustumerResponse> responseEntity = req.exchange(
+                    "http://localhost:8090/signin",
+                    HttpMethod.POST,
+                    resqestEntity,
+                    CustumerResponse.class
+            );
+
+            CustumerResponse response = responseEntity.getBody();
+            Boolean userLogado = false;
+            
+            if(response.getStatus() == 200){
+                userLogado = true;
+                
+            }else {
+                JOptionPane.showMessageDialog(this, response.getMessage());
+            }
+ 
+            return userLogado;
+        }catch (HeadlessException | RestClientException ex) {
+            JOptionPane.showMessageDialog(this, ex.getMessage());
+            return false;
+        }catch (Exception ex) {
+            JOptionPane.showMessageDialog(this, ex.getMessage());
+            return false;
+        }
+        
+    }
+    
+    private Boolean validarCamposPreenchidos(){
+        String loginUser = txtUser1.getText();
+        String passwordUser = txtPassword1.getText();
+        Boolean isCamposPreenchidos = true;
+        
+        String mensagem = "";
+        
+        if((loginUser == null || loginUser.equals("")) &&
+                (passwordUser == null || passwordUser.equals(""))){
+            mensagem = "É obrigatorio preencher todos os campos";
+            isCamposPreenchidos = false;
+        }else {
+            if(loginUser == null || loginUser.equals("")){
+                mensagem += "É obrigatório preencher o login\n\n";
+                isCamposPreenchidos = false;
+            }
+
+            if(passwordUser == null || passwordUser.equals("")){
+                mensagem += "É obrigatório preencher a senha";
+                isCamposPreenchidos = false;
+            }
+        }        
+        
+        if(!isCamposPreenchidos){
+            JOptionPane.showMessageDialog(this, mensagem);
+        }
+        
+        return isCamposPreenchidos;
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

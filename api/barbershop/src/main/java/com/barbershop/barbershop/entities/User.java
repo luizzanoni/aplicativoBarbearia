@@ -35,8 +35,5 @@ public class User{
 
     @Column(name = "password")
     String password;
-
-    @Column(name = "is_barber")
-    Integer is_barber;
 }
 

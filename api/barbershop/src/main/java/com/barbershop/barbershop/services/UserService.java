@@ -1,7 +1,5 @@
 package com.barbershop.barbershop.services;
 
-import java.util.List;
-
 import org.springframework.stereotype.Service;
 
 import com.barbershop.barbershop.entities.User;
@@ -23,8 +21,6 @@ public class UserService {
             }
             else if (user.getPassword() == null || user.getPassword().equals("")){
                 throw new Exception("Não é possível criar uma senha em branco.");
-            }else if (user.getIs_barber() == null){
-                throw new Exception("Defina se é barbearia ou cliente.");
             }else {
                 userRepository.save(user);
                 return true;

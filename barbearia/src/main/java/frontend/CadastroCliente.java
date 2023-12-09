@@ -4,6 +4,16 @@
  */
 package frontend;
 
+import entities.CustumerResponse;
+import entities.User;
+import java.awt.HeadlessException;
+import javax.swing.JOptionPane;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.client.RestClientException;
+import org.springframework.web.client.RestTemplate;
 /**
  *
  * @author luanareiszanoni
@@ -74,6 +84,11 @@ public class CadastroCliente extends javax.swing.JFrame {
 
         btnSalvarClienteNovo.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btnSalvarClienteNovo.setText("Cadastrar");
+        btnSalvarClienteNovo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalvarClienteNovoActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -147,6 +162,13 @@ public class CadastroCliente extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtSenhaClienteNovotxtUserActionPerformed
 
+    private void btnSalvarClienteNovoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarClienteNovoActionPerformed
+        Boolean isCriado = this.cadatroUsuario();
+        if(isCriado){
+            this.dispose();
+        }
+    }//GEN-LAST:event_btnSalvarClienteNovoActionPerformed
+    
     /**
      * @param args the command line arguments
      */
@@ -180,6 +202,91 @@ public class CadastroCliente extends javax.swing.JFrame {
                 new CadastroCliente().setVisible(true);
             }
         });
+    }
+    
+    private boolean cadatroUsuario(){
+        try{
+            Boolean isCamposPreenchidos = this.validarCamposPreenchidos();
+            if(!isCamposPreenchidos){
+                return false;
+            }
+            
+            User user = new User();
+            RestTemplate req = new RestTemplate();
+            HttpHeaders headers = new HttpHeaders();
+            
+            String nameUser = txtNomeClienteNovo.getText();
+            String loginUser = txtUserClienteNovo.getText();
+            String passwordUser = txtSenhaClienteNovo.getText();
+
+            user.setName(nameUser);
+            user.setLogin(loginUser);
+            user.setPassword(passwordUser);
+
+            headers.set("Content-Type", "application/json");
+            HttpEntity<User> resqestEntity = new HttpEntity<>(user, headers);
+
+            ResponseEntity<CustumerResponse> responseEntity = req.exchange(
+                    "http://localhost:8090/signup",
+                    HttpMethod.POST,
+                    resqestEntity,
+                    CustumerResponse.class
+            );
+
+            CustumerResponse response = responseEntity.getBody();
+            Boolean userCriado = false;
+            
+            if(response.getStatus() == 200){
+                userCriado = true;
+            }
+
+            JOptionPane.showMessageDialog(this, response.getMessage());
+            return userCriado;
+        }catch (HeadlessException | RestClientException ex) {
+            JOptionPane.showMessageDialog(this, ex.getMessage());
+            return false;
+        }catch (Exception ex) {
+            JOptionPane.showMessageDialog(this, ex.getMessage());
+            return false;
+        }
+        
+    }
+    
+    private Boolean validarCamposPreenchidos(){
+        String nameUser = txtNomeClienteNovo.getText();
+        String loginUser = txtUserClienteNovo.getText();
+        String passwordUser = txtSenhaClienteNovo.getText();
+        Boolean isCamposPreenchidos = true;
+        
+        String mensagem = "";
+        
+        if((nameUser == null || nameUser.equals("")) && 
+                (loginUser == null || loginUser.equals("")) &&
+                (passwordUser == null || passwordUser.equals(""))){
+            mensagem = "É obrigatorio preencher todos os campos";
+            isCamposPreenchidos = false;
+        }else {
+            if(nameUser == null || nameUser.equals("")){
+                mensagem += "É obrigatório preencher o seu nome\n\n";
+                isCamposPreenchidos = false;
+            }
+
+            if(loginUser == null || loginUser.equals("")){
+                mensagem += "É obrigatório criar um login\n\n";
+                isCamposPreenchidos = false;
+            }
+
+            if(passwordUser == null || passwordUser.equals("")){
+                mensagem += "É obrigatório criar uma senha";
+                isCamposPreenchidos = false;
+            }
+        }        
+        
+        if(!isCamposPreenchidos){
+            JOptionPane.showMessageDialog(this, mensagem);
+        }
+        
+        return isCamposPreenchidos;
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
