@@ -48,6 +48,8 @@ public class Inicial extends javax.swing.JFrame {
         barberTerceira = new javax.swing.JMenuItem();
         menuAjuda = new javax.swing.JMenu();
         help = new javax.swing.JMenuItem();
+        btnMenuHorarios = new javax.swing.JMenu();
+        btnMeusAgendamentos = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Seja Bem-Vindo");
@@ -160,6 +162,23 @@ public class Inicial extends javax.swing.JFrame {
 
         jMenuBar1.add(menuAjuda);
 
+        btnMenuHorarios.setText("Meus Horários");
+        btnMenuHorarios.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMenuHorariosActionPerformed(evt);
+            }
+        });
+
+        btnMeusAgendamentos.setText("Meus Agendamentos");
+        btnMeusAgendamentos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMeusAgendamentosActionPerformed(evt);
+            }
+        });
+        btnMenuHorarios.add(btnMeusAgendamentos);
+
+        jMenuBar1.add(btnMenuHorarios);
+
         setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -252,6 +271,15 @@ public class Inicial extends javax.swing.JFrame {
 
     }//GEN-LAST:event_labelEntradaUserComponentAdded
 
+    private void btnMenuHorariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMenuHorariosActionPerformed
+       // TODO add your handling code here:
+    }//GEN-LAST:event_btnMenuHorariosActionPerformed
+
+    private void btnMeusAgendamentosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMeusAgendamentosActionPerformed
+        ListagemHorarios listagemHorarios = new ListagemHorarios();        
+        listagemHorarios.setVisible(true);         // TODO add your handling code here:
+    }//GEN-LAST:event_btnMeusAgendamentosActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -294,6 +322,8 @@ public class Inicial extends javax.swing.JFrame {
     private javax.swing.JButton btnBarba;
     private javax.swing.JButton btnCabeloBarba;
     private javax.swing.JButton btnCorteCabelo;
+    private javax.swing.JMenu btnMenuHorarios;
+    private javax.swing.JMenuItem btnMeusAgendamentos;
     private javax.swing.JButton btnSobrancelhas;
     private javax.swing.JMenuItem help;
     private javax.swing.JLabel jLabel2;
