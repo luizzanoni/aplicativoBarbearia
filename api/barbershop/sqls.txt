@@ -1,1 +1,3 @@
 CREATE TABLE IF NOT EXISTS user(id INTEGER, name TEXT,login TEXT, password TEXT, is_barber INTEGER);
+
+CREATE TABLE IF NOT EXISTS schedule(id INTEGER, id_user INTEGER, id_corte INTEGER, nome_corte TEXT, data_corte INTEGER);

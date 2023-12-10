@@ -23,7 +23,10 @@ public class ScheduleService {
 
     public Schedule[] obterTodosHorarios() {
         Schedule[] arraySchedules = scheduleRepository.obterTodosHorarios();
-        System.out.println(arraySchedules);
+        for (int i=0; i<arraySchedules.length; i++){
+            System.out.println(arraySchedules[i]);
+        }
+        
         return arraySchedules;
     }
 }
