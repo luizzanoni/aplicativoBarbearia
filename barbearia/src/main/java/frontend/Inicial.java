@@ -107,6 +107,7 @@ public class Inicial extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        labelEntradaUser.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         labelEntradaUser.setText("Bem-Vindo, {@User}");
         labelEntradaUser.addContainerListener(new java.awt.event.ContainerAdapter() {
             public void componentAdded(java.awt.event.ContainerEvent evt) {

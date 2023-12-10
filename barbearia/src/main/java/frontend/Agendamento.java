@@ -5,10 +5,14 @@
 package frontend;
 
 import entities.CustumerResponse;
-import entities.Schedule;
+import entities.Agenda;
 import entities.Sessao;
 import entities.User;
+import java.text.SimpleDateFormat;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
+import javax.swing.text.PlainDocument;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
@@ -43,22 +47,11 @@ public class Agendamento extends javax.swing.JFrame {
         calendario = new com.toedter.calendar.JCalendar();
         jPanel2 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
-        btnNoveMeia = new javax.swing.JToggleButton();
-        btnOnze = new javax.swing.JToggleButton();
-        btnDozeMeia = new javax.swing.JToggleButton();
-        btnQuatorze = new javax.swing.JToggleButton();
-        btnQuinzeMeia = new javax.swing.JToggleButton();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        txtHora = new javax.swing.JTextField();
+        txtMinuto = new javax.swing.JTextField();
         btnAgendarHorario = new javax.swing.JButton();
-        btnDesseceis = new javax.swing.JToggleButton();
-        btnQuatorzeMeia = new javax.swing.JToggleButton();
-        btnTreze = new javax.swing.JToggleButton();
-        btnOnzeMeia = new javax.swing.JToggleButton();
-        btnDez = new javax.swing.JToggleButton();
-        btnDezMeia = new javax.swing.JToggleButton();
-        btnDoze = new javax.swing.JToggleButton();
-        btnTrezeMeia = new javax.swing.JToggleButton();
-        btnQuinze = new javax.swing.JToggleButton();
-        btnDesseceisMeia = new javax.swing.JToggleButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Agende seu horário");
@@ -67,22 +60,46 @@ public class Agendamento extends javax.swing.JFrame {
         jLabel1.setText("Agende seu horário!");
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel3.setText("Selecione o seu horário:");
+        jLabel3.setText("Digite seu horário:");
 
-        btnNoveMeia.setText("9:30");
-        btnNoveMeia.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnNoveMeiaActionPerformed(evt);
-            }
-        });
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel2.setText("HORA: ");
 
-        btnOnze.setText("11:00");
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel4.setText("MIN.:");
 
-        btnDozeMeia.setText("12:30");
-
-        btnQuatorze.setText("14:00");
-
-        btnQuinzeMeia.setText("15:30");
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(11, 11, 11)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
+                        .addGap(27, 27, 27)
+                        .addComponent(jLabel2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtHora, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(txtMinuto, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(48, 48, 48))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(jLabel4)
+                    .addComponent(txtHora, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtMinuto, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(28, Short.MAX_VALUE))
+        );
 
         btnAgendarHorario.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         btnAgendarHorario.setText("Agendar");
@@ -92,120 +109,6 @@ public class Agendamento extends javax.swing.JFrame {
             }
         });
 
-        btnDesseceis.setText("16:00");
-
-        btnQuatorzeMeia.setText("14:30");
-
-        btnTreze.setText("13:00");
-        btnTreze.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnTrezeActionPerformed(evt);
-            }
-        });
-
-        btnOnzeMeia.setText("11:30");
-        btnOnzeMeia.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnOnzeMeiaActionPerformed(evt);
-            }
-        });
-
-        btnDez.setText("10:00");
-
-        btnDezMeia.setText("10:30");
-
-        btnDoze.setText("12:00");
-
-        btnTrezeMeia.setText("13:30");
-
-        btnQuinze.setText("15:00");
-
-        btnDesseceisMeia.setText("16:30");
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel2Layout.createSequentialGroup()
-                    .addContainerGap()
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(jPanel2Layout.createSequentialGroup()
-                            .addGap(12, 12, 12)
-                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(jPanel2Layout.createSequentialGroup()
-                                    .addComponent(btnNoveMeia, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(btnDez, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(btnDezMeia, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                                        .addComponent(btnOnze, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(btnOnzeMeia, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(btnDoze, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                                        .addComponent(btnDozeMeia, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(btnTreze, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(btnTrezeMeia, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                                        .addComponent(btnQuatorze, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(btnQuatorzeMeia, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(btnQuinze, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                                        .addComponent(btnQuinzeMeia, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(btnDesseceis, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(btnDesseceisMeia, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(btnAgendarHorario, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 345, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                    .addContainerGap(13, Short.MAX_VALUE)))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 273, Short.MAX_VALUE)
-            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel2Layout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(18, 18, 18)
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(btnNoveMeia)
-                        .addComponent(btnDez)
-                        .addComponent(btnDezMeia))
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(btnOnze)
-                        .addComponent(btnOnzeMeia)
-                        .addComponent(btnDoze))
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(btnDozeMeia)
-                        .addComponent(btnTreze)
-                        .addComponent(btnTrezeMeia))
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(btnQuatorze)
-                        .addComponent(btnQuatorzeMeia)
-                        .addComponent(btnQuinze))
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(btnQuinzeMeia)
-                        .addComponent(btnDesseceis)
-                        .addComponent(btnDesseceisMeia))
-                    .addGap(32, 32, 32)
-                    .addComponent(btnAgendarHorario)
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-        );
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -214,13 +117,18 @@ public class Agendamento extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 270, Short.MAX_VALUE)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 322, Short.MAX_VALUE)
                         .addGap(112, 112, 112))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(calendario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(calendario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addContainerGap())))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(42, 42, 42)
+                .addComponent(btnAgendarHorario, javax.swing.GroupLayout.PREFERRED_SIZE, 345, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -228,10 +136,12 @@ public class Agendamento extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(calendario, javax.swing.GroupLayout.DEFAULT_SIZE, 275, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(calendario, javax.swing.GroupLayout.DEFAULT_SIZE, 199, Short.MAX_VALUE)
+                .addGap(84, 84, 84)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(42, 42, 42))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnAgendarHorario, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(86, 86, 86))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -248,27 +158,20 @@ public class Agendamento extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addGap(72, 72, 72))
         );
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnOnzeMeiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOnzeMeiaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnOnzeMeiaActionPerformed
-
-    private void btnNoveMeiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNoveMeiaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnNoveMeiaActionPerformed
-
-    private void btnTrezeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTrezeActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnTrezeActionPerformed
-
     private void btnAgendarHorarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgendarHorarioActionPerformed
-        this.cadastrarAgendamento();
+        ValidaCamposHoraMinuto();
+        if(ValidaCamposHoraMinuto()){
+            this.cadastrarAgendamento();   
+        } else {
+            JOptionPane.showMessageDialog(this, "Somente números válidos nos campos de Hora e Minuto");
+        }
     }//GEN-LAST:event_btnAgendarHorarioActionPerformed
     
     private Boolean cadastrarAgendamento(){
@@ -278,34 +181,38 @@ public class Agendamento extends javax.swing.JFrame {
         if(!isCamposPreenchidos){
         }
 
-        Schedule schedule = new Schedule();
+        Agenda agenda = new Agenda();
         RestTemplate req = new RestTemplate();
         HttpHeaders headers = new HttpHeaders();
 
-        schedule.setId_user(sessao.idUsuario);
-        schedule.setId_corte(sessao.id_corte);
-        schedule.setNome_corte(sessao.nome_corte);
-        schedule.setData_corte("2023/12/09 19:00");
+        agenda.setId_user(sessao.idUsuario);
+        agenda.setId_corte(sessao.id_corte);
+        agenda.setNome_corte(sessao.nome_corte);
+        String date = new SimpleDateFormat("dd/MM/yyyy").format(calendario.getDate());
+        String hora = txtHora.getText();
+        String minuto = txtMinuto.getText();
+        String concatenacaoDateHoraMinuto = date + " " + hora + ":" + minuto;
+        agenda.setData_corte(concatenacaoDateHoraMinuto);
 
         headers.set("Content-Type", "application/json");
-        HttpEntity<Schedule> resqestEntity = new HttpEntity<>(schedule, headers);
+        HttpEntity<Agenda> resqestEntity = new HttpEntity<>(agenda, headers);
 
-        ResponseEntity<CustumerResponse<Schedule>> responseEntity = req.exchange(
-                "http://localhost:8090/schedule/cadastro",
-                HttpMethod.POST,
-                resqestEntity,
-                new ParameterizedTypeReference<CustumerResponse<Schedule>>() {}
+        ResponseEntity<CustumerResponse<Agenda>> responseEntity = req.exchange("http://localhost:8090/schedule/cadastro",
+            HttpMethod.POST,
+            resqestEntity,
+            new ParameterizedTypeReference<CustumerResponse<Agenda>>() {}
         );
 
-        CustumerResponse<Schedule> response = responseEntity.getBody();
+        CustumerResponse<Agenda> response = responseEntity.getBody();
         Boolean isAgendado = false;
 
         if(response.getStatus() == 200){
             isAgendado = true;
+            JOptionPane.showMessageDialog(this, "Foi cadastrado com sucesso seu horário para: " + concatenacaoDateHoraMinuto);
         }else {
             JOptionPane.showMessageDialog(this, response.getMessage());
         }
-
+        
         return isAgendado;
     }
     
@@ -343,28 +250,44 @@ public class Agendamento extends javax.swing.JFrame {
             }
         });
     }
+    
+    private Boolean ValidaCamposHoraMinuto(){
+        String hora = txtHora.getText();
+        String minuto = txtMinuto.getText();
+        
+        Pattern pattern = Pattern.compile("^[0-9]+$");
+
+        // Cria um comparador para o padrão
+        Matcher matcherHora = pattern.matcher(hora);
+        Matcher matcherMinuto = pattern.matcher(minuto);
+
+        // Verifica se o valor corresponde ao padrão
+        if (matcherHora.matches() && matcherMinuto.matches()) {
+            Integer horaFormatada = Integer.valueOf(hora);
+            Integer minutoFormatado = Integer.valueOf(minuto);
+            if(horaFormatada > 23){
+                horaFormatada = 23;
+                txtHora.setText("23");
+            } else if (minutoFormatado > 59) {
+                minutoFormatado = 59;
+                txtMinuto.setText("59");
+            }
+            return true;
+        } else {
+            return false;
+        }
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAgendarHorario;
-    private javax.swing.JToggleButton btnDesseceis;
-    private javax.swing.JToggleButton btnDesseceisMeia;
-    private javax.swing.JToggleButton btnDez;
-    private javax.swing.JToggleButton btnDezMeia;
-    private javax.swing.JToggleButton btnDoze;
-    private javax.swing.JToggleButton btnDozeMeia;
-    private javax.swing.JToggleButton btnNoveMeia;
-    private javax.swing.JToggleButton btnOnze;
-    private javax.swing.JToggleButton btnOnzeMeia;
-    private javax.swing.JToggleButton btnQuatorze;
-    private javax.swing.JToggleButton btnQuatorzeMeia;
-    private javax.swing.JToggleButton btnQuinze;
-    private javax.swing.JToggleButton btnQuinzeMeia;
-    private javax.swing.JToggleButton btnTreze;
-    private javax.swing.JToggleButton btnTrezeMeia;
     private com.toedter.calendar.JCalendar calendario;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JTextField txtHora;
+    private javax.swing.JTextField txtMinuto;
     // End of variables declaration//GEN-END:variables
 }

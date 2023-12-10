@@ -8,7 +8,7 @@ package entities;
  *
  * @author lucas
  */
-public class Schedule {
+public class Agenda {
     Long id;
     Long id_user;
     int id_corte;
