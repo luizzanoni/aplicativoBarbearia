@@ -186,6 +186,7 @@ public class Agendamento extends javax.swing.JFrame {
         HttpHeaders headers = new HttpHeaders();
 
         agenda.setId_user(sessao.idUsuario);
+        agenda.setNome_user(sessao.user.getName());
         agenda.setId_corte(sessao.id_corte);
         agenda.setNome_corte(sessao.nome_corte);
         String date = new SimpleDateFormat("dd/MM/yyyy").format(calendario.getDate());
@@ -197,7 +198,7 @@ public class Agendamento extends javax.swing.JFrame {
         headers.set("Content-Type", "application/json");
         HttpEntity<Agenda> resqestEntity = new HttpEntity<>(agenda, headers);
 
-        ResponseEntity<CustumerResponse<Agenda>> responseEntity = req.exchange("http://localhost:8090/schedule/cadastro",
+        ResponseEntity<CustumerResponse<Agenda>> responseEntity = req.exchange("http://localhost:8090/agenda/cadastro",
             HttpMethod.POST,
             resqestEntity,
             new ParameterizedTypeReference<CustumerResponse<Agenda>>() {}

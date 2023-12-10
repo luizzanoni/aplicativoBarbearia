@@ -12,6 +12,7 @@ public class Agenda {
     Long id;
     Long id_user;
     int id_corte;
+    String nome_user;
     String nome_corte;
     String data_corte;
 
@@ -37,6 +38,14 @@ public class Agenda {
 
     public void setId_corte(int id_corte) {
         this.id_corte = id_corte;
+    }
+    
+    public String getNome_user() {
+        return nome_user;
+    }
+
+    public void setNome_user(String nome_user) {
+        this.nome_user = nome_user;
     }
 
     public String getNome_corte() {

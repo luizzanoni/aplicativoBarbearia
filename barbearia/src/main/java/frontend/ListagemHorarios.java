@@ -4,6 +4,21 @@
  */
 package frontend;
 
+import entities.Agenda;
+import entities.CustumerResponse;
+import entities.Sessao;
+import entities.User;
+import java.awt.HeadlessException;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+import org.springframework.core.ParameterizedTypeReference;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.client.RestClientException;
+import org.springframework.web.client.RestTemplate;
+
 /**
  *
  * @author luanareiszanoni
@@ -15,6 +30,7 @@ public class ListagemHorarios extends javax.swing.JFrame {
      */
     public ListagemHorarios() {
         initComponents();
+        this.exibirHorarios();
     }
 
     /**
@@ -30,14 +46,14 @@ public class ListagemHorarios extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tblHorarios = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 2, 24)); // NOI18N
         jLabel1.setText("Horários da Barbearia");
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tblHorarios.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null},
                 {null, null, null},
@@ -54,7 +70,7 @@ public class ListagemHorarios extends javax.swing.JFrame {
                 "Nome", "Corte", "Dia e Hora"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(tblHorarios);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -111,7 +127,47 @@ public class ListagemHorarios extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+    
+    private Agenda[] obterHorarios() {
+        try{
+            Sessao sessao = Sessao.getInstance();
+            RestTemplate req = new RestTemplate();
+            HttpHeaders headers = new HttpHeaders();
+            Agenda[] arrAgenda = {new Agenda()};
+            HttpEntity<Agenda[]> resqestEntity = new HttpEntity<>(arrAgenda, headers);
 
+            ResponseEntity<CustumerResponse<Agenda[]>> responseEntity =  req.exchange(
+                    "http://localhost:8090/agenda/obter",
+                    HttpMethod.GET,
+                    resqestEntity,
+                    new ParameterizedTypeReference<CustumerResponse<Agenda[]>>() {}
+            );
+
+            CustumerResponse<Agenda[]> response = responseEntity.getBody();
+            if(response.getStatus() != 200){
+                throw new Exception(response.getMessage());
+            }
+            return response.getEntity();
+        }catch(Exception ex){
+            JOptionPane.showMessageDialog(this, ex.getMessage());
+            Agenda[] arrAgenda = {};
+            return arrAgenda;
+        }
+    }
+    
+    private void exibirHorarios(){
+        Agenda[] arrHorarios = this.obterHorarios();
+        
+        DefaultTableModel tblHoariosFront = (DefaultTableModel) tblHorarios.getModel();
+        
+        tblHoariosFront.setNumRows(0);
+        for (Agenda agenda : arrHorarios){
+            Object[] row = {agenda.getNome_user(), agenda.getNome_corte(), agenda.getData_corte()};
+            tblHoariosFront.addRow(row);
+        }
+        
+    }
+    
     /**
      * @param args the command line arguments
      */
@@ -152,6 +208,6 @@ public class ListagemHorarios extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTable tblHorarios;
     // End of variables declaration//GEN-END:variables
 }

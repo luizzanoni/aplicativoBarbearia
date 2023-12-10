@@ -11,11 +11,11 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "schedule")
+@Table(name = "agenda")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Schedule {
+public class Agenda {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
@@ -23,6 +23,9 @@ public class Schedule {
 
     @Column(name = "id_user")
     Long id_user;
+
+    @Column(name = "nome_user")
+    String nome_user;
 
     @Column(name = "id_corte")
     Long id_corte;
