@@ -33,4 +33,3 @@ public class Schedule {
     @Column(name = "data_corte")
     String data_corte;
 }
-

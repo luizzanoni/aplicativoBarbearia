@@ -20,8 +20,8 @@ public class ScheduleController {
     @PostMapping("/schedule/cadastro")
     public CustumerResponse<Schedule> createUser(@RequestBody Schedule schedule){
         CustumerResponse<Schedule> custumerResponse;
-
         try{
+            scheduleService.obterTodosHorarios();
             System.out.println(schedule);
             Boolean isSucesso = scheduleService.createItem(schedule);
             if (isSucesso){

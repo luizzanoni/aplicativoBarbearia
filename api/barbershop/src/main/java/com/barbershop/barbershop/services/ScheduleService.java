@@ -1,7 +1,5 @@
 package com.barbershop.barbershop.services;
-
 import org.springframework.stereotype.Service;
-
 import com.barbershop.barbershop.entities.Schedule;
 import com.barbershop.barbershop.repositories.ScheduleRepository;
 
@@ -21,5 +19,11 @@ public class ScheduleService {
             System.out.println(ex.getMessage());
             return false;
         } 
+    }
+
+    public Schedule[] obterTodosHorarios() {
+        Schedule[] arraySchedules = scheduleRepository.obterTodosHorarios();
+        System.out.println(arraySchedules);
+        return arraySchedules;
     }
 }
