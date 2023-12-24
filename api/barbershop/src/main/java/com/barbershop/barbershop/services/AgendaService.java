@@ -28,6 +28,5 @@ public class AgendaService {
         }catch(Exception ex){
             throw new Exception(ex.getMessage());
         }
-        
     }
 }

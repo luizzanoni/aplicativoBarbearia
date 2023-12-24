@@ -28,12 +28,10 @@ public class AgendaController {
             }  else {
                 custumerResponse = new CustumerResponse<Agenda>("Erro ao fazer Agendamento", 401);
             }
-            
         }catch (Exception exc){
             String message = exc.getMessage();
             custumerResponse = new CustumerResponse<Agenda>(message, 401);
         }
-
         return custumerResponse;
     }
 
@@ -48,7 +46,6 @@ public class AgendaController {
             String message = exc.getMessage();
             custumerResponse = new CustumerResponse<Agenda[]>(message, 401);
         }
-
         return custumerResponse;
     }
 }
